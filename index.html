@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SABIQ <br><br> Decision Impact Simulation Platform</title>
+
+    <!-- English Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<!-- Login Modal -->
+
+<div id="loginModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close-btn" onclick="closeLogin()">×</button>
+
+        <div class="modal-header">
+
+            <h2>Login</h2>
+
+            <p>Access the GovTwin Platform</p>
+
+        </div>
+
+        <form onsubmit="demoLogin(event)">
+
+            <div class="form-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    placeholder="example@gov.sa"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="primary-btn modal-login-btn"
+            >
+                Login
+            </button>
+
+        </form>
+
+        <div class="login-note">
+            Demo version — login information is not stored
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Privacy Policy Modal -->
+
+<div id="privacyModal" class="modal">
+
+    <div class="modal-content privacy-content">
+
+        <button class="close-btn" onclick="closePrivacy()">×</button>
+
+        <div class="modal-header">
+
+            <h2>Privacy Policy</h2>
+
+            <p>Data Protection and Usage</p>
+
+        </div>
+
+        <p>
+            SABIQ is designed as a prototype to support decision-making
+            through digital simulation and analysis of potential decision impacts.
+        </p>
+
+        <p>
+            The prototype platform uses simulated and anonymized data
+            for simulation and analysis purposes. No real personal data is used.
+        </p>
+
+        <p>
+            The results are intended to help decision-makers understand
+            potential scenarios and do not represent a guaranteed prediction
+            of what will happen in reality.
+        </p>
+
+    </div>
+
+</div>
+
+
+<body>
+
+    <!-- Top Bar -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+                National Decision Support Platform
+            </span>
+
+            <div>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <span class="separator">
+                    |
+                </span>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    SABIQ
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SABIQ
+                    </strong>
+
+                    <span>
+                        Decision Impact Simulation Platform
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="#" class="active">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#how">
+                    How It Works
+                </a>
+
+                <a href="#reports">
+                    Reports
+                </a>
+
+            </nav>
+
+
+            <button
+                class="login-btn"
+                onclick="openLogin()"
+            >
+                Login
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="section-label">
+                        Artificial Intelligence × Digital Twin
+                    </span>
+
+                    <h1>
+
+                        Simulate Decision Impact
+
+                        <br>
+
+                        <span>Before Implementation</span>
+
+                    </h1>
+
+                    <p>
+                        An intelligent platform that helps decision-makers
+                        anticipate the social and economic impacts of digital
+                        services and decisions through a secure simulation environment.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="primary-btn"
+                            onclick="startSimulation()"
+                        >
+
+                            Start New Simulation
+
+                            <span>←</span>
+
+                        </button>
+
+
+                        <button
+                            class="secondary-btn"
+                            onclick="learnMore()"
+                        >
+                            Learn About the Platform
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Simulation Card -->
+
+                <div class="simulation-card">
+
+                    <div class="card-title">
+
+                        <div>
+
+                            <span class="live-dot"></span>
+
+                            System Status
+
+                        </div>
+
+                        <span class="ready">
+                            Ready for Simulation
+                        </span>
+
+                    </div>
+
+
+                    <div class="simulation-circle">
+
+                        <div class="circle-content">
+
+                            <strong>
+                                365
+                            </strong>
+
+                            <span>
+                                Simulation Days
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-stats">
+
+                        <div>
+
+                            <strong>
+                                2.5M+
+                            </strong>
+
+                            <span>
+                                Virtual Agents
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <span>
+                                Sectors
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                24/7
+                            </strong>
+
+                            <span>
+                                Analysis
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="stats-section">
+
+            <div class="container stats-grid">
+
+                <div class="stat">
+
+                    <strong>
+                        365
+                    </strong>
+
+                    <span>
+                        Days That Can Be Simulated
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        12+
+                    </strong>
+
+                    <span>
+                        Analyzable Sectors
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        3
+                    </strong>
+
+                    <span>
+                        Main Impact Types
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        Before
+                    </strong>
+
+                    <span>
+                        Decision-Making
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Platform -->
+
+        <section
+            id="about"
+            class="about section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        About the Platform
+                    </span>
+
+                    <h2>
+
+                        From Reaction to
+
+                        <strong>
+                            Prediction
+                        </strong>
+
+                    </h2>
+
+                    <p>
+                        GovTwin helps decision-makers understand the
+                        expected impacts of decisions before they are
+                        implemented in the real world.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+
+                    <div class="feature-card">
+
+                        <div class="icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Digital Twin
+                        </h3>
+
+                        <p>
+                            Create a virtual environment that simulates
+                            society and economic sectors to study the
+                            impact of decisions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Intelligent Agents
+                        </h3>
+
+                        <p>
+                            Simulate the behavior of different groups
+                            of beneficiaries, businesses, and sectors.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Risk Prediction
+                        </h3>
+
+                        <p>
+                            Identify potential side effects and risks
+                            before implementing a decision.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- How It Works -->
+
+        <section
+            id="how"
+            class="how section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        How It Works
+                    </span>
+
+                    <h2>
+
+                        Three Steps to Make
+
+                        <strong>
+                            Safer Decisions
+                        </strong>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="steps">
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Define the Decision
+                        </h3>
+
+                        <p>
+                            Enter the details of the service or regulation
+                            whose impact you want to simulate.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Run the Simulation
+                        </h3>
+
+                        <p>
+                            The platform simulates interactions between
+                            society and different sectors.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Review the Results
+                        </h3>
+
+                        <p>
+                            Get risk indicators, impact analysis,
+                            and proactive recommendations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Ready to Test Your Decision?
+                </h2>
+
+                <p>
+                    Start a virtual simulation and see the expected
+                    impact before implementing the decision.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="startSimulation()"
+                >
+
+                    Start New Simulation
+
+                    <span>←</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+
+                <strong>
+                    SABIQ
+                </strong>
+
+                <p>
+                    Decision Impact Simulation Platform
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="#"
+                    onclick="openPrivacy(); return false;"
+                >
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms and Conditions
+                </a>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 SABIQ — Hackathon Prototype
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

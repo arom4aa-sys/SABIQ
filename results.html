@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Simulation Results | SABIQ</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Top -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>
+                National Decision Support Platform
+            </span>
+
+            <div>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <span class="separator">
+                    |
+                </span>
+
+                <a href="#">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    SABIQ
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SABIQ
+                    </strong>
+
+                    <span>
+                        Decision Impact Simulation Platform
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#how">
+                    How It Works
+                </a>
+
+                <a href="reports.html">
+                    Reports
+                </a>
+
+            </nav>
+
+
+            <button
+                class="login-btn"
+                onclick="openLogin()">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Header -->
+
+        <section class="page-header">
+
+            <div class="container">
+
+                <span>
+                    Simulation Report
+                </span>
+
+                <h1>
+                    Decision Analysis Results
+                </h1>
+
+                <p id="resultSubtitle">
+                    Loading simulation data...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="results-section">
+
+            <div class="container">
+
+
+                <!-- Status -->
+
+                <div class="result-status">
+
+                    <div>
+
+                        <span class="success-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Simulation Completed
+                            </strong>
+
+                            <p id="simulationStatus">
+                                The hypothetical scenario has been analyzed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="date" id="simulationDate">
+                        --
+                    </span>
+
+                </div>
+
+
+                <!-- Risk + Summary -->
+
+                <div class="results-grid">
+
+
+                    <!-- Risk -->
+
+                    <div class="risk-card">
+
+                        <span>
+                            Risk Index
+                        </span>
+
+
+                        <div class="risk-number">
+
+                            <span id="riskScore">
+                                --
+                            </span>
+
+                            <small>
+                                / 100
+                            </small>
+
+                        </div>
+
+
+                        <div class="risk-bar">
+
+                            <div></div>
+
+                        </div>
+
+
+                        <strong
+                            id="riskLevel"
+                            class="risk-high">
+
+                            Risk Level: --
+
+                        </strong>
+
+
+                        <p id="riskDescription">
+                            Analyzing the scenario...
+                        </p>
+
+                    </div>
+
+
+                    <!-- Summary -->
+
+                    <div class="summary-card">
+
+                        <h3>
+                            Impact Summary
+                        </h3>
+
+
+                        <div class="impact-row">
+
+                            <span>
+                                Social Impact
+                            </span>
+
+                            <strong id="socialImpact">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="impact-row">
+
+                            <span>
+                                Economic Impact
+                            </span>
+
+                            <strong id="economicImpact">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="impact-row">
+
+                            <span>
+                                Service Pressure
+                            </span>
+
+                            <strong id="servicePressure">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="impact-row">
+
+                            <span>
+                                Beneficiary Satisfaction
+                            </span>
+
+                            <strong id="satisfaction">
+                                --%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Simulation Statistics
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Simulation Scope
+                            </span>
+
+                            <h2>
+                                Affected Entities and People
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stats-grid">
+
+
+                        <div class="stat-box">
+
+                            <strong id="agentsSimulated">
+                                --
+                            </strong>
+
+                            <span>
+                                Total Agents
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <strong id="peopleAgents">
+                                --
+                            </strong>
+
+                            <span>
+                                People
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <strong id="businessAgents">
+                                --
+                            </strong>
+
+                            <span>
+                                Businesses
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-box">
+
+                            <strong id="governmentAgents">
+                                --
+                            </strong>
+
+                            <span>
+                                Government Services
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Detailed Impact
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Detailed Indicators
+                            </span>
+
+                            <h2>
+                                How Did the Decision Affect the System?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detailed-impact">
+
+
+                        <div class="detail-row">
+
+                            <span>
+                                Beneficiary Behavior Change
+                            </span>
+
+                            <strong id="behaviorChange">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-row">
+
+                            <span>
+                                Change in Service Demand
+                            </span>
+
+                            <strong id="demandChange">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-row">
+
+                            <span>
+                                Business Impact
+                            </span>
+
+                            <strong id="businessImpact">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-row">
+
+                            <span>
+                                Government Service Pressure
+                            </span>
+
+                            <strong id="governmentPressure">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Impact Chart
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Impact Analysis
+                            </span>
+
+                            <h2>
+                                Projected Indicators
+                            </h2>
+
+                        </div>
+
+
+                        <select id="durationFilter">
+
+                            <option value="12">
+                                Over 1 Year
+                            </option>
+
+                            <option value="6">
+                                Over 6 Months
+                            </option>
+
+                            <option value="3">
+                                Over 3 Months
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart-placeholder">
+
+                        <div
+                            id="simulationChart"
+                            class="simulation-chart">
+                        </div>
+
+
+                        <div
+                            id="chartLabels"
+                            class="chart-labels">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Butterfly Effect
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Butterfly Effect
+                            </span>
+
+                            <h2>
+                                Projected Impact Chain
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="domino">
+
+
+                        <div class="domino-item">
+
+                            <div class="domino-icon">
+                                01
+                            </div>
+
+                            <strong id="dominoDecision">
+                                --
+                            </strong>
+
+                            <span>
+                                Initial Decision
+                            </span>
+
+                        </div>
+
+
+                        <div class="arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="domino-item">
+
+                            <div class="domino-icon">
+                                02
+                            </div>
+
+                            <strong id="dominoBehavior">
+                                --
+                            </strong>
+
+                            <span>
+                                Social Impact
+                            </span>
+
+                        </div>
+
+
+                        <div class="arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="domino-item">
+
+                            <div class="domino-icon">
+                                03
+                            </div>
+
+                            <strong id="dominoService">
+                                --
+                            </strong>
+
+                            <span>
+                                Operational Pressure
+                            </span>
+
+                        </div>
+
+
+                        <div class="arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="domino-item warning">
+
+                            <div class="domino-icon">
+                                04
+                            </div>
+
+                            <strong id="dominoEconomic">
+                                --
+                            </strong>
+
+                            <span>
+                                Economic Impact
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Recommendation
+                     ============================ -->
+
+                <div class="recommendation">
+
+
+                    <div class="recommendation-icon">
+                        ✦
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Platform Recommendation
+                        </span>
+
+
+                        <h2 id="recommendationTitle">
+                            Preparing Recommendation...
+                        </h2>
+
+
+                        <p id="recommendationText">
+                            The platform is analyzing the scenario results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="result-actions">
+
+
+                    <button
+                        class="primary-btn"
+                        onclick="window.print()">
+
+                        Print Report
+
+                    </button>
+
+
+                    <a
+                        href="simulation.html"
+                        class="secondary-btn">
+
+                        Simulate Another Scenario
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="copyright">
+
+            © 2026 SABIQ — Hackathon Prototype
+
+        </div>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

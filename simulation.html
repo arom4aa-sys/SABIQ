@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Start New Simulation | SABIQ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+
+    <div class="top-bar">
+
+        <div class="container top-content">
+
+            <span>National Decision Support Platform</span>
+
+            <div>
+                <a href="#">Help Center</a>
+                <span class="separator">|</span>
+                <a href="#">Contact Us</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    SABIQ
+                </div>
+
+                <div class="brand-text">
+                    <strong>SABIQ</strong>
+                    <span>Decision Impact Simulation Platform</span>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#how">
+                    How It Works
+                </a>
+
+                <a href="reports.html">
+                    Reports
+                </a>
+
+            </nav>
+
+
+            <button class="login-btn">
+                Login
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Page -->
+
+    <main>
+
+        <section class="page-header">
+
+            <div class="container">
+
+                <span>Simulation</span>
+
+                <h1>
+                    Create a New Simulation
+                </h1>
+
+                <p>
+                    Define the details of the decision you want to test
+                    before implementing it in the real world.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="simulation-form-section">
+
+            <div class="container">
+
+                <div class="form-card">
+
+                    <div class="form-title">
+
+                        <div>
+                            <span class="form-icon">01</span>
+
+                            <div>
+                                <h2>Decision Information</h2>
+
+                                <p>
+                                    Enter the basic information about the decision
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Decision Type -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Decision Type
+                        </label>
+
+                        <select id="decisionType">
+
+                            <option>
+                                Modify Government Support Conditions
+                            </option>
+
+                            <option>
+                                Launch a New Digital Service
+                            </option>
+
+                            <option>
+                                Modify Sector Requirements
+                            </option>
+
+                            <option>
+                                Reorganize a Government Service
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Sector -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Affected Sector
+                        </label>
+
+                        <select id="sector">
+
+                            <option>
+                                Government Services
+                            </option>
+
+                            <option>
+                                Economy and Commerce
+                            </option>
+
+                            <option>
+                                Transportation
+                            </option>
+
+                            <option>
+                                Healthcare
+                            </option>
+
+                            <option>
+                                Education
+                            </option>
+
+                            <option>
+                                Technology and Innovation
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Target Group -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Target Group
+                        </label>
+
+                        <select id="targetGroup">
+
+                            <option value="all">
+                                All Beneficiaries
+                            </option>
+
+                            <option value="individuals">
+                                Individuals
+                            </option>
+
+                            <option value="businesses">
+                                Businesses
+                            </option>
+
+                            <option value="sme">
+                                Small and Medium Enterprises
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Simulation Duration -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Simulation Duration
+                        </label>
+
+                        <div class="duration-options">
+
+                            <label class="duration-option">
+
+                                <input
+                                    type="radio"
+                                    name="duration"
+                                    value="3"
+                                >
+
+                                <span>3 Months</span>
+
+                            </label>
+
+
+                            <label class="duration-option">
+
+                                <input
+                                    type="radio"
+                                    name="duration"
+                                    value="6"
+                                >
+
+                                <span>6 Months</span>
+
+                            </label>
+
+
+                            <label class="duration-option selected">
+
+                                <input
+                                    type="radio"
+                                    name="duration"
+                                    value="12"
+                                    checked
+                                >
+
+                                <span>1 Full Year</span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <!-- Scenario -->
+
+                    <div class="form-title second">
+
+                        <div>
+
+                            <span class="form-icon">02</span>
+
+                            <div>
+
+                                <h2>Scenario Settings</h2>
+
+                                <p>
+                                    Define the expected level of change
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Slider 1 -->
+
+                    <div class="slider-group">
+
+                        <div class="slider-label">
+
+                            <label>
+                                Decision Change Percentage
+                            </label>
+
+                            <strong id="changeValue">
+                                30%
+                            </strong>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="changeSlider"
+                            min="0"
+                            max="100"
+                            value="30"
+                        >
+
+                    </div>
+
+
+                    <!-- Slider 2 -->
+
+                    <div class="slider-group">
+
+                        <div class="slider-label">
+
+                            <label>
+                                Percentage of Affected Beneficiaries
+                            </label>
+
+                            <strong id="peopleValue">
+                                65%
+                            </strong>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="peopleSlider"
+                            min="0"
+                            max="100"
+                            value="65"
+                        >
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="form-actions">
+
+                        <a href="index.html" class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button
+                            class="primary-btn"
+                            onclick="runSimulation()"
+                        >
+
+                            Run Simulation
+
+                            <span>←</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="copyright">
+            © 2026 SABIQ — Hackathon Prototype
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
