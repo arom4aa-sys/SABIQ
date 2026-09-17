@@ -153,6 +153,16 @@
             <div class="container">
 
 
+                <!-- Methodology notice -->
+
+                <div class="method-note">
+                    <strong>Simulated Impact</strong>
+                    — These results are produced by a data-informed agent-based
+                    simulation for exploring potential decision impacts. They are
+                    simulated outputs and assumptions, not real-world predictions.
+                </div>
+
+
                 <!-- Status -->
 
                 <div class="result-status">
@@ -296,6 +306,346 @@
                         </div>
 
                     </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Risk Breakdown
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Risk Drivers
+                            </span>
+
+                            <h2>
+                                What Is Driving the Risk Score?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p class="card-sub">
+                        Risk = weighted combination of the factors below
+                        (weights sum to 1.0). See the technical documentation for the formula.
+                    </p>
+
+                    <div id="riskBreakdownList" class="breakdown-list">
+                        <!-- populated by JS -->
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Explanation
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Why This Result?
+                            </span>
+
+                            <h2>
+                                Simulated Explanation
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p id="explanationSummary" class="explain-summary">
+                        --
+                    </p>
+
+                    <ul id="explanationDrivers" class="explain-drivers">
+                        <li>--</li>
+                    </ul>
+
+                    <div class="explain-meta">
+
+                        <div>
+                            <span>Mainly affecting</span>
+                            <strong id="explanationGroup">--</strong>
+                        </div>
+
+                    </div>
+
+                    <p id="explanationEvidence" class="explain-evidence">
+                        --
+                    </p>
+
+                    <p class="note-text">
+                        Note: simulated impact only — not a real-world prediction.
+                    </p>
+
+                </div>
+
+
+                <!-- ============================
+                     Impact vs Baseline
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Before vs After
+                            </span>
+
+                            <h2>
+                                Impact Relative to the Baseline
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p class="card-sub">
+                        The baseline is the system state with no decision applied.
+                        The rows show the simulated value and how much the decision
+                        changed it.
+                    </p>
+
+                    <div class="detailed-impact">
+
+                        <div class="detail-row">
+                            <span>Social Impact</span>
+                            <strong><span id="blSocialValue">--</span>
+                                <small class="delta" id="blSocialDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Economic Impact</span>
+                            <strong><span id="blEconomicValue">--</span>
+                                <small class="delta" id="blEconomicDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Service Pressure</span>
+                            <strong><span id="blServiceValue">--</span>
+                                <small class="delta" id="blServiceDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Satisfaction</span>
+                            <strong><span id="blSatisfactionValue">--</span>
+                                <small class="delta" id="blSatisfactionDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Behavioral Change</span>
+                            <strong><span id="blBehaviorValue">--</span>
+                                <small class="delta" id="blBehaviorDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Business Impact</span>
+                            <strong><span id="blBusinessValue">--</span>
+                                <small class="delta" id="blBusinessDelta"></small></strong>
+                        </div>
+
+                        <div class="detail-row">
+                            <span>Risk (ambient baseline vs decision)</span>
+                            <strong><span id="blRiskValue">--</span>
+                                <small class="delta" id="blRiskDelta"></small></strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================
+                     Scenario Context / Assumptions
+                     ============================ -->
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Assumptions
+                            </span>
+
+                            <h2>
+                                Scenario Context &amp; Model Assumptions
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="context-grid">
+
+                        <div class="context-box" id="sectorContextBox">
+
+                            <h3>Sector Profile</h3>
+
+                            <p id="sectorProfileLine">
+                                --
+                            </p>
+
+                            <ul id="sectorSensitivities" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box" id="decisionContextBox">
+
+                            <h3>Decision Profile</h3>
+
+                            <p id="decisionProfileLine">
+                                --
+                            </p>
+
+                            <ul id="decisionFactors" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box" id="datasetContextBox">
+
+                            <h3>Dataset Used (GASTAT 2024–2025)</h3>
+
+                            <p id="datasetContextLine">
+                                --
+                            </p>
+
+                            <ul id="datasetIndicators" class="context-list"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <p class="note-text" id="methodologyNote">
+                        --
+                    </p>
+
+                </div>
+
+
+                <!-- ============================
+                     AI / ML Sector Intelligence
+                     ============================ -->
+
+                <div id="mlSection" class="dashboard-card">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                AI / ML Sector Intelligence
+                            </span>
+
+                            <h2>
+                                Dataset-Driven Sector Profile
+                            </h2>
+
+                        </div>
+
+                        <span id="mlStatusBadge" class="tag-off">
+                            Not available
+                        </span>
+
+                    </div>
+
+                    <p class="card-sub">
+                        Unsupervised ML identifies patterns and similarities in the
+                        dataset. It does not predict actual future policy outcomes.
+                    </p>
+
+                    <div class="context-grid">
+
+                        <div class="context-box">
+
+                            <h3>Cluster</h3>
+
+                            <p id="mlStatusText">
+                                --
+                            </p>
+
+                            <ul id="mlClusterList" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box">
+
+                            <h3>Similar Sectors</h3>
+
+                            <ul id="mlSimilarSectors" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box">
+
+                            <h3>Key Features</h3>
+
+                            <ul id="mlKeyFeatures" class="context-list"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="context-grid">
+
+                        <div class="context-box">
+
+                            <h3>ML Sensitivity Multipliers</h3>
+
+                            <ul id="mlMultipliers" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box">
+
+                            <h3>Applied Sensitivities</h3>
+
+                            <ul id="mlAppliedSensitivities" class="context-list"></ul>
+
+                        </div>
+
+
+                        <div class="context-box">
+
+                            <h3>Data Quality</h3>
+
+                            <ul id="mlQuality" class="context-list"></ul>
+
+                        </div>
+
+                    </div>
+
+                    <p id="mlExplanation" class="explain-evidence">
+                        --
+                    </p>
+
+                    <p class="note-text">
+                        ML sensitivities are bounded, dataset-derived adjustments to
+                        the documented sensitivities. They are not predictions and do
+                        not claim real-world causality or guaranteed impact.
+                    </p>
 
                 </div>
 
@@ -478,11 +828,11 @@
                         <div>
 
                             <span>
-                                Impact Analysis
+                                Monthly Simulation
                             </span>
 
                             <h2>
-                                Projected Indicators
+                                Simulated Impact Month by Month
                             </h2>
 
                         </div>
@@ -521,6 +871,12 @@
                         </div>
 
                     </div>
+
+                    <p class="note-text">
+                        Chart heights represent a normalized simulated impact
+                        index per month (average of behaviour, demand, business
+                        and service components). Simulated values only.
+                    </p>
 
                 </div>
 
@@ -673,6 +1029,79 @@
                 </div>
 
 
+                <!-- ============================
+                     Scenario Comparison
+                     ============================ -->
+
+                <div id="comparisonSection" class="dashboard-card comparison-section" style="display:none;">
+
+                    <div class="dashboard-title">
+
+                        <div>
+
+                            <span>
+                                Scenario Comparison
+                            </span>
+
+                            <h2>
+                                Scenario A vs Scenario B
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p id="comparisonSummary" class="explain-summary">
+                        --
+                    </p>
+
+                    <div class="compare-cards" id="compareCards">
+
+                        <div class="compare-card">
+                            <h3>Scenario A</h3>
+                            <p id="compareALabel">--</p>
+                            <strong id="compareARisk">--</strong>
+                            <span id="compareARiskLevel">--</span>
+                        </div>
+
+                        <div class="compare-card">
+                            <h3>Scenario B</h3>
+                            <p id="compareBLabel">--</p>
+                            <strong id="compareBRisk">--</strong>
+                            <span id="compareBRiskLevel">--</span>
+                        </div>
+
+                    </div>
+
+                    <div class="compare-table-wrap">
+
+                        <table class="compare-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Indicator</th>
+                                    <th>Scenario A</th>
+                                    <th>Scenario B</th>
+                                    <th>Change (B − A)</th>
+                                    <th>Better</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="comparisonTable">
+                                <!-- populated by JS -->
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <p class="note-text" id="comparisonNote">
+                        --
+                    </p>
+
+                </div>
+
+
                 <!-- Buttons -->
 
                 <div class="result-actions">
@@ -683,6 +1112,16 @@
                         onclick="window.print()">
 
                         Print Report
+
+                    </button>
+
+
+                    <button
+                        id="compareBtn"
+                        class="secondary-btn"
+                        onclick="compareScenario()">
+
+                        Compare With Another Scenario
 
                     </button>
 

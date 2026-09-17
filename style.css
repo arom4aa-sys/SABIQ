@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: "IBM Plex Sans Arabic", Arial, sans-serif;
+    font-family: "IBM Plex Sans", Arial, sans-serif;
     background: var(--white);
     color: var(--dark);
     line-height: 1.8;
@@ -1474,6 +1474,343 @@ footer {
         grid-template-columns:
             repeat(2, 1fr);
 
+    }
+
+}
+
+/* ============================
+   Methodology note
+   ============================ */
+
+.method-note {
+    background: #eef7f3;
+    border: 1px solid #cfe6dc;
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #37524a;
+}
+
+.method-note strong {
+    color: var(--green);
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+
+/* ============================
+   Card sub + note text
+   ============================ */
+
+.card-sub {
+    color: var(--gray);
+    font-size: 13px;
+    margin: 6px 0 0;
+}
+
+.note-text {
+    color: var(--gray);
+    font-size: 12px;
+    margin-top: 14px;
+    font-style: italic;
+}
+
+/* ============================
+   Risk breakdown
+   ============================ */
+
+.breakdown-list {
+    margin-top: 20px;
+}
+
+.breakdown-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.breakdown-row:last-child {
+    border-bottom: none;
+}
+
+.breakdown-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.breakdown-label {
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.breakdown-info strong {
+    color: var(--green);
+    font-size: 14px;
+}
+
+.breakdown-track {
+    height: 8px;
+    background: #edf0ee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.breakdown-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2b8c70, var(--green));
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+.breakdown-contribution {
+    display: block;
+    text-align: right;
+    color: var(--gray);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* ============================
+   Explanation
+   ============================ */
+
+.explain-summary {
+    color: var(--dark);
+    font-size: 15px;
+    margin-top: 16px;
+    line-height: 1.7;
+}
+
+.explain-drivers {
+    margin: 18px 0 4px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.explain-drivers li {
+    position: relative;
+    padding: 8px 0 8px 22px;
+    border-bottom: 1px solid var(--border);
+    color: #45524d;
+    font-size: 14px;
+}
+
+.explain-drivers li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 11px;
+    top: 12px;
+}
+
+.explain-drivers li:last-child {
+    border-bottom: none;
+}
+
+.explain-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.explain-meta > div span {
+    display: block;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+.explain-meta > div strong {
+    color: var(--green);
+    font-size: 16px;
+}
+
+.explain-evidence {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 14px;
+    background: #fafcfb;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+/* ============================
+   Context grid (sector / decision / dataset)
+   ============================ */
+
+.context-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.context-box {
+    background: #fafcfb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.context-box h3 {
+    font-size: 15px;
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.context-box p {
+    color: var(--gray);
+    font-size: 12.5px;
+    margin-bottom: 8px;
+}
+
+.context-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.context-list li {
+    font-size: 12.5px;
+    color: #45524d;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--border);
+}
+
+.context-list li:last-child {
+    border-bottom: none;
+}
+
+.delta {
+    color: var(--gray);
+    font-size: 12px;
+    margin-left: 8px;
+    font-weight: normal;
+}
+
+/* ============================
+   ML status badges
+   ============================ */
+
+.tag-on {
+    color: var(--green);
+    background: var(--light-green);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tag-off {
+    color: #8a5a1c;
+    background: #fdf3e2;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ============================
+   Comparison
+   ============================ */
+
+.comparison-section {
+    border-left: 4px solid var(--gold);
+}
+
+.compare-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.compare-card {
+    background: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+}
+
+.compare-card h3 {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 6px;
+}
+
+.compare-card p {
+    font-size: 13px;
+    color: var(--dark);
+    min-height: 40px;
+}
+
+.compare-card strong {
+    display: block;
+    font-size: 30px;
+    color: var(--green);
+}
+
+.compare-card span {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.compare-table-wrap {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.compare-table th,
+.compare-table td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+}
+
+.compare-table th {
+    background: #f3f6f4;
+    color: var(--gray);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.chart-empty {
+    color: var(--gray);
+    font-size: 14px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* ============================
+   Responsive additions
+   ============================ */
+
+@media (max-width: 900px) {
+
+    .context-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compare-cards {
+        grid-template-columns: 1fr;
     }
 
 }
